@@ -1,57 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flexbox Wrap Example</title>
-    <style>
-        /* CSS from the previous step */
-        #holder {
-            display: flex;
-            flex-wrap: wrap;
-            /* Added min-width to force wrapping on a wide screen for demonstration */
-            width: 500px; 
-            margin: 20px;
-            border: 1px solid lightgray;
-        }
-        .item {
-            width: 80px;
-            height: 80px;
-            margin: 5px;
-            color: black;
-            font-size: 3em;
-            display: flex; /* Centers the number */
-            justify-content: center;
-            align-items: center;
-            font-family: Arial, sans-serif;
-        }
-        /* Item specific styles based on your images */
-        .green { background-color: darkolivegreen; }
-        .red { background-color: orangered; }
-        .blue { background-color: blue; }
-        
-        /* Specific order applied for the single-row image (3, 4, 5, 6, 7, 1, 2) */
-        /* To create the layout shown in your second image, item 1 needs a higher order than 3-7 */
-        #item-1 { order: 6; }
-        #item-2 { order: 7; } /* Item 2 wraps to the next line */
-        #item-3 { order: 1; }
-        #item-4 { order: 2; }
-        #item-5 { order: 3; }
-        #item-6 { order: 4; }
-        #item-7 { order: 5; }
-        
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flexbox Example</title>
+
 </head>
 <body>
 
-<div id="holder">
-    <div id="item-3" class="item green">3</div>
-    <div id="item-4" class="item green">4</div>
-    <div id="item-5" class="item green">5</div>
-    <div id="item-6" class="item green">6</div>
-    <div id="item-7" class="item green">7</div>
-    <div id="item-1" class="item red">1</div>
-    <div id="item-2" class="item blue">2</div>
+<h2>Single Row Example</h2>
+<div class="holder">
+  <div class="item green">3</div>
+  <div class="item red">1</div>
+  <div class="item blue">2</div>
+</div>
+
+<h2>Flex Wrap Example</h2>
+<div class="holder">
+  <div class="item green">3</div>
+  <div class="item green">4</div>
+  <div class="item green">5</div>
+  <div class="item green">6</div>
+  <div class="item green">7</div>
+  <div class="item red">1</div>
+  <div class="item blue">2</div>
 </div>
 
 </body>
