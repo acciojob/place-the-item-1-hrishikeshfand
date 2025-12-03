@@ -1,2 +1,57 @@
+ 
 
-/* Your CSS Code here. */
+#holder {
+  /* 1. Make the container a flex container */
+  display: flex;
+
+  /* 2. Allow items to wrap onto the next line (demonstrates the image layout) */
+  flex-wrap: wrap;
+
+  /* 3. Distribute items evenly in the available space along the row
+     (This helps space them out as seen in the first image, and keeps them distributed when they wrap) */
+  justify-content: space-around;
+  
+  /* Optional: Center the rows when wrapped (not strictly required by your image, but good practice) */
+  align-content: flex-start; 
+
+  /* Define the width to be small enough to force wrapping for demonstration */
+  width: 500px; /* Adjust this width based on your screen to see the wrapping effect */
+  min-height: 200px;
+  margin: 20px auto;
+  border: 1px solid #ddd; 
+}
+
+.item {
+  width: 80px;
+  height: 80px;
+  margin: 5px;
+  color: black;
+  font-size: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+}
+
+/* Item-specific styles for color and to force the specific sequence (3, 4, 5, 6, 7, 1, 2) */
+
+.green { background-color: darkolivegreen; }
+.red { background-color: orangered; }
+.blue { background-color: blue; }
+
+/* The 'order' property is used to reorder the items relative to their source order in the HTML.
+   This is what creates the 3, 4, 5, 6, 7, 1 sequence, even if the HTML is (1, 2, 3...) */
+#item-3 { order: 1; }
+#item-4 { order: 2; }
+#item-5 { order: 3; }
+#item-6 { order: 4; }
+#item-7 { order: 5; }
+#item-1 { order: 6; } /* The red box */
+#item-2 { order: 7; } /* The blue box that drops to the next line */
+Key Elements of the Solution:
+display: flex;: Activates Flexbox on the container.
+
+flex-wrap: wrap;: Crucial for the layout, as it allows the blue box (2) to move to the second line when there is not enough room on the first line.
+
+order Property: This is used on the individual items (#item-1, #item-2, etc.) to control their display sequence. By assigning numerical values, we ensure they appear in the visual order of 3, 4, 5, 6, 7, 1, 2 regardless of where they are in the HTML code.
